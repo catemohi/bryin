@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: bryin_db
+    restart: always
+    user: "${UID}:${GID}"
+    env_file:
+      - .env.db
+    volumes:
+      - .:/var/lib/postgresql/data
+    expose:
+      - 5432
+  redis:
+    container_name: bryin_redis
+    image: redis
+    depends_on:
+      - db
+    restart: always
+  webapp:
+    container_name: bryin_webapp
+    depends_on:
+      - db
+    restart: always
+    volumes:
+      - .static:/static
+      - .media:/media
+    env_file:
+      - .env-bryin
+    build: src/
+    ports:
+      - "8000:8000"
