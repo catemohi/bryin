@@ -23,8 +23,8 @@ services:
       - db
     restart: always
     volumes:
-      - .static:/static
-      - .media:/media
+      - .static:/usr/src/app/static
+      - .media:/usr/src/app/media
     env_file:
       - .env-bryin
     build: src/
