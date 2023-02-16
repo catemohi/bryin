@@ -28,5 +28,15 @@ services:
     env_file:
       - .env-bryin
     build: src/
+    expose:
+      - 8000
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    volumes:
+      - .static:/var/www/app/static
+      - .media:/var/www/app/media
     ports:
-      - "8000:8000"
+      - "127.0.0.1:42230:80"
+    depends_on:
+      - webapp
