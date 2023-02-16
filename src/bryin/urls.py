@@ -21,7 +21,7 @@ from django.conf.urls import handler404
 
 
 urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
-    path('admin/', admin.site.urls),
-    path('', include('webapp.urls'), name='webapp_app'),
+    path('bryin/admin/', admin.site.urls),
+    path('bryin/', include('webapp.urls'), name='webapp_app'),
 ]
 # handler404 = page_not_found_view
