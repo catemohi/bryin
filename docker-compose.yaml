@@ -6,7 +6,7 @@ services:
     restart: always
     user: "${UID}:${GID}"
     env_file:
-      - .env.db
+      - .env-db
     volumes:
       - .:/var/lib/postgresql/data
     expose:
