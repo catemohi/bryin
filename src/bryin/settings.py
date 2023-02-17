@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
-from os import environ
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(environ.get("DEBUG")))
+DEBUG = bool(int(os.environ.get("DEBUG")))
 
-ALLOWED_HOSTS = environ.get("ALLOWED_HOSTS").split()
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split()
 
 
 # Application definition
@@ -78,12 +77,12 @@ WSGI_APPLICATION = "bryin.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": environ.get("SQL_ENGINE"),
-        "HOST": environ.get("SQL_HOST"),
-        "PORT": int(environ.get("SQL_PORT")),
-        "USER": environ.get("SQL_USER"),
-        "PASSWORD": environ.get("SQL_PASSWORD"),
-        "NAME": environ.get("SQL_NAME"),
+        "ENGINE": os.environ.get("SQL_ENGINE"),
+        "HOST": os.environ.get("SQL_HOST"),
+        "PORT": int(os.environ.get("SQL_PORT")),
+        "USER": os.environ.get("SQL_USER"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD"),
+        "NAME": os.environ.get("SQL_NAME"),
     },
 }
 
