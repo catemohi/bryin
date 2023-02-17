@@ -1,3 +1,8 @@
+/* #eeeeff */
+/* #7f7caf */
+/* #9fb4c7 */
+/* #28587B */
+/* #9fb798 */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +14,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('http://i.stack.imgur.com/kx8MT.gif');
+    background: #28587B;
     background-size: cover;
     background-position: center;
 }
@@ -19,7 +24,7 @@ body {
     height: min-content;
     padding: 20px;
     border-radius: 12px;
-    background: #ffffff;
+    background: #eeeeff;
 }
 
 .login h1 {
